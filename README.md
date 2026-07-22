@@ -17,3 +17,33 @@
 ![Plotly](https://img.shields.io/badge/Plotly-3F4F75?logo=plotly&logoColor=white)
 ![Matplotlib](https://img.shields.io/badge/Matplotlib-11557C)
 ![SciPy](https://img.shields.io/badge/SciPy-8CAAE6?logo=scipy&logoColor=white)
+
+
+---
+
+## Fonctionnalités
+
+- Graphique divisé en deux onglets :
+  Un premier onglet permet aux utilisateurs de choisir un jour à prédire ainsi qu'une température, le résultat indique le nombre d'interventions prédit par créneau de 6 heures.
+  Un deuxième onglet propose de chosir une augmentation de température variant entre 0 et + 3°C et sa répercusssion sur la volumétrie opérationelle mensuelle/annuelle 
+
+## Technologies utilisées
+
+| Technologie | Rôle |
+|---|---|
+| Python | Création du jeu de données initial |
+| JavaScript / HTML / CSS | Composants front-end personnalisés |
+
+---
+
+## Structure du projet
+```
+├── Dashboard/
+│   ├── data.json/          # Données
+│   ├── index.html /        # Structuration et organisation des différents élements apparaissant sur les graphiques 
+    ├── style.css /         # Stylisation des graphiques
+│   └── main.js             # Intercativité des graphiques 
+└── Rapport_Méthodologique.pdf  # Explication de la méthodologie complète
+```
+
+---
