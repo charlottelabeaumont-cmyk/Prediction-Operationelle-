@@ -27,6 +27,8 @@
   Un premier onglet permet aux utilisateurs de choisir un jour à prédire ainsi qu'une température, le résultat indique le nombre d'interventions prédit par créneau de 6 heures.
   Un deuxième onglet propose de chosir une augmentation de température variant entre 0 et + 3°C et sa répercusssion sur la volumétrie opérationelle mensuelle/annuelle 
 
+---
+
 ## Technologies utilisées
 
 | Technologie | Rôle |
