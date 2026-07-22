@@ -1,5 +1,4 @@
-# Graphiques interactifs de la prédiction opérationnelle du SDMIS en 2026
-### Ville de Lyon
+# Graphiques interactifs de la prédiction opérationnelle du SDMIS en 2026 --- Ville de Lyon 
 
 ![Statut](https://img.shields.io/badge/Statut-En%20cours-orange)
 
