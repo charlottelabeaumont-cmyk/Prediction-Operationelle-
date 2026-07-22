@@ -43,9 +43,25 @@
 ├── Dashboard/
 │   ├── data.json/          # Données
 │   ├── index.html /        # Structuration et organisation des différents élements apparaissant sur les graphiques 
-    ├── style.css /         # Stylisation des graphiques
+│   ├── style.css /         # Stylisation des graphiques
 │   └── main.js             # Intercativité des graphiques 
 └── Rapport_Méthodologique.pdf  # Explication de la méthodologie complète
 ```
+
+---
+
+## Documentation
+Ces graphiques sont accompagnés d'un rapport méthodologique détaillant la méthodologie employée quant à leur réalisation.
+
+📄 (lien vers méthodologie)
+
+---
+
+## Auteure 
+| Nom | Profil |
+|---|---|
+| Charlotte **JOUVE** | [![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github)](https://github.com/charlottelabeaumont-cmyk) |
+
+**Provenance de la commande** : Stage réalisé au GACR (SDPOS) entre le 01/04/2026 et le 01/09/2026 dans le cadre d'une collaboration entre le SDMIS et le projet de recherche TRACES. Stage de fin de Master 2 Géographies Numériques 
 
 ---
