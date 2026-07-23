@@ -174,7 +174,7 @@ function renderTab2(){
   delta2Value.style.color = tempColor(delta);
   applyThumbColor(delta2Slider, delta);
 
-  const ref = DATA_GLOBALE['0.0'];
+  const ref = DATA_GLOBALE['historique'];
   const cur = DATA_GLOBALE[deltaKey(delta)];
   const color = tempColor(delta);
 
@@ -186,8 +186,14 @@ function renderTab2(){
     kpiCardHTML('Créneau nuit (18h–6h) / an', cur.creneau_nuit, ref.creneau_nuit, ' interv.', color),
   ].join('');
 
-  const refMonthly = MOIS_COURT.map((_,i)=> ref.par_mois[String(i+1)]);
-  const curMonthly = MOIS_COURT.map((_,i)=> cur.par_mois[String(i+1)]);
+ const refMonthly = MOIS_COURT.map((_,i)=> 
+  DATA_GLOBALE.historique.par_mois[String(i+1)]
+);
+
+const curMonthly = MOIS_COURT.map((_,i)=> 
+  cur.par_mois[String(i+1)]
+);
+
 
 
   if(chart2a){
