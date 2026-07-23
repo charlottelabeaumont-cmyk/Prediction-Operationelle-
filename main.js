@@ -108,7 +108,7 @@ function renderChart1(){
         labels: CRENEAUX,
         datasets:[
           { label:'Moyenne historique', data: histVals, backgroundColor:'#3A4C5E', borderRadius:4, maxBarThickness:52 },
-          { label:'Prédiction selon la température choisie', data: predVals, backgroundColor: color, borderRadius:4, maxBarThickness:52 }
+          { label:'Prédiction selon la température choisie ', data: predVals, backgroundColor: color, borderRadius:4, maxBarThickness:52 }
         ]
       },
       options:{
@@ -131,14 +131,14 @@ function renderChart1(){
   dayTotalsEl.innerHTML = `
     <div class="mini-stat">
       <div class="mini-stat-label">Total historique journalier</div>
-      <div class="mini-stat-value">${fmtNum(histTotal)} <span style="font-size:12px;color:var(--text-muted)">interv.</span></div>
+      <div class="mini-stat-value">${fmtNum(histTotal)} <span style="font-size:12px;color:var(--text-muted)">interventions</span></div>
     </div>
     <div class="mini-stat">
       <div class="mini-stat-label">Total prédit journalier (${fmtDelta(delta)} °C)</div>
-      <div class="mini-stat-value" style="color:${color}">${fmtNum(predTotal)} <span style="font-size:12px;color:var(--text-muted)">interv.</span></div>
+      <div class="mini-stat-value" style="color:${color}">${fmtNum(predTotal)} <span style="font-size:12px;color:var(--text-muted)">interventions</span></div>
     </div>
     <div class="mini-stat">
-      <div class="mini-stat-label">Écart vs historique</div>
+      <div class="mini-stat-label">Écart entre le nombre d'interventions prédit de la journée sélectionnée et la moyenne historique de cette journée</div>
       <div class="mini-stat-value" style="color:${color}">${pct>=0?'+':''}${pct.toFixed(1)}%</div>
     </div>
   `;
@@ -198,8 +198,8 @@ function renderTab2(){
     chart2a = new Chart(document.getElementById('chart2a'), {
       type:'bar',
       data:{ labels: MOIS_COURT, datasets:[
-        { label:'Référence', data: refMonthly, backgroundColor:'#3A4C5E', borderRadius:3, maxBarThickness:26 },
-        { label:'Prédiction selon la température choisie', data: curMonthly, backgroundColor: color, borderRadius:3, maxBarThickness:26 }
+        { label:'Référence ', data: refMonthly, backgroundColor:'#3A4C5E', borderRadius:3, maxBarThickness:26 },
+        { label:'Prédiction selon la température choisie ', data: curMonthly, backgroundColor: color, borderRadius:3, maxBarThickness:26 }
       ]},
       options:{
         responsive:true, maintainAspectRatio:false,
