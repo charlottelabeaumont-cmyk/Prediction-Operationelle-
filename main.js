@@ -47,7 +47,7 @@ function fmtDateLong(dateStr){
 function mixChannel(a,b,t){ return Math.round(a + (b-a)*t); }
 function tempColor(delta){
   const stops = [ [62,143,208], [240,166,59], [229,72,77] ]; // cool -> mid -> hot
-  const mid = 1.5; // GIEC +2°C au centre de l'échelle 0-4°C
+  const mid = 1.5;
   let t, c1, c2;
   if(delta<=mid){ t = delta/mid; c1=stops[0]; c2=stops[1]; }
   else { t = (delta-mid)/mid; c1=stops[1]; c2=stops[2]; }
@@ -108,7 +108,7 @@ function renderChart1(){
         labels: CRENEAUX,
         datasets:[
           { label:'Moyenne historique', data: histVals, backgroundColor:'#3A4C5E', borderRadius:4, maxBarThickness:52 },
-          { label:'Prédiction (référence)', data: predVals, backgroundColor: color, borderRadius:4, maxBarThickness:52 }
+          { label:'Prédiction selon la température choisie', data: predVals, backgroundColor: color, borderRadius:4, maxBarThickness:52 }
         ]
       },
       options:{
@@ -199,7 +199,7 @@ function renderTab2(){
       type:'bar',
       data:{ labels: MOIS_COURT, datasets:[
         { label:'Référence', data: refMonthly, backgroundColor:'#3A4C5E', borderRadius:3, maxBarThickness:26 },
-        { label:'Scénario', data: curMonthly, backgroundColor: color, borderRadius:3, maxBarThickness:26 }
+        { label:'Prédiction selon la température choisie', data: curMonthly, backgroundColor: color, borderRadius:3, maxBarThickness:26 }
       ]},
       options:{
         responsive:true, maintainAspectRatio:false,
