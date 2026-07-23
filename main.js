@@ -130,11 +130,11 @@ function renderChart1(){
   const pct = histTotal>0 ? ((predTotal-histTotal)/histTotal*100) : 0;
   dayTotalsEl.innerHTML = `
     <div class="mini-stat">
-      <div class="mini-stat-label">Total historique — jour</div>
+      <div class="mini-stat-label">Total historique journalier</div>
       <div class="mini-stat-value">${fmtNum(histTotal)} <span style="font-size:12px;color:var(--text-muted)">interv.</span></div>
     </div>
     <div class="mini-stat">
-      <div class="mini-stat-label">Total prédit — jour (${fmtDelta(delta)} °C)</div>
+      <div class="mini-stat-label">Total prédit journalier (${fmtDelta(delta)} °C)</div>
       <div class="mini-stat-value" style="color:${color}">${fmtNum(predTotal)} <span style="font-size:12px;color:var(--text-muted)">interv.</span></div>
     </div>
     <div class="mini-stat">
@@ -203,7 +203,10 @@ function renderTab2(){
       ]},
       options:{
         responsive:true, maintainAspectRatio:false,
-        plugins:{ legend:{ labels:{ color:'#EAF1F6', font:{family:'Inter', size:11.5} } } },
+      plugins:{legend:{ labels:{ color:'#EAF1F6', font:{family:'Inter', size:11.5} } },tooltip:{callbacks:{label: ctx => `${ctx.dataset.label}: ${Math.round(ctx.parsed.y)} interv.`
+          }
+        }
+      },
         scales:{
           x:{ ticks:{ color:'#8DA3B8', font:{family:'Inter', size:10.5} }, grid:{ display:false } },
           y:{ ticks:{ color:'#8DA3B8', font:{family:'IBM Plex Mono', size:10.5} }, grid:{ color:'#20303F' }, beginAtZero:true }
