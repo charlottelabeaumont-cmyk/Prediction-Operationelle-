@@ -162,7 +162,7 @@ function kpiCardHTML(label, val, ref, unitSuffix, color){
       <div class="kpi-label">${label}</div>
       <div class="kpi-value" style="color:${color}">${fmtNum(val)}<span class="kpi-unit">${unitSuffix}</span></div>
       <div class="kpi-delta" style="color:${pct>0.05?color:'var(--text-muted)'}">
-        <span class="arrow">${arrow}</span>${pct>=0?'+':''}${pct.toFixed(1)}% vs référence (0°C)
+        <span class="arrow">${arrow}</span>${pct>=0?'+':''}${pct.toFixed(1)}% vs volumétrie historique
       </div>
     </div>
   `;
