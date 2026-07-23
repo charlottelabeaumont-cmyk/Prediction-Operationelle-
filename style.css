@@ -166,7 +166,7 @@
  .info-box{
   margin-top:14px;
   padding:12px 16px;
-  background:var(--surface);
+  background:var(--surface-2);
   border:1px solid var(--border);
   border-radius:8px;
   color:var(--text-muted);
