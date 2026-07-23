@@ -144,6 +144,10 @@
   .kpi-delta .arrow{ margin-right:3px; }
 
   .charts-row{ display:grid; grid-template-columns:1fr; gap:16px; }
+  .charts-row .card{
+  width:100%;
+}
+
 
   footer.note{
     margin-top:24px; font-size:11.5px; color:var(--text-faint); line-height:1.6;
