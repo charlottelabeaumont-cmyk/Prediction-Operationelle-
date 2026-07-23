@@ -204,7 +204,7 @@ const curMonthly = MOIS_COURT.map((_,i)=>
     chart2a = new Chart(document.getElementById('chart2a'), {
       type:'bar',
       data:{ labels: MOIS_COURT, datasets:[
-        { label:'Référence ', data: refMonthly, backgroundColor:'#3A4C5E', borderRadius:3, maxBarThickness:26 },
+        { label:'Volumétrie historique ', data: refMonthly, backgroundColor:'#3A4C5E', borderRadius:3, maxBarThickness:26 },
         { label:'Prédiction selon la température choisie ', data: curMonthly, backgroundColor: color, borderRadius:3, maxBarThickness:26 }
       ]},
       options:{
