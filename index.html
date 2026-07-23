@@ -1,32 +1,34 @@
+<!------------------------Code HTML mobilisé pour l'organisation du dashboard (la page web)------------------------------------------------->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Impact du réchauffement — charge opérationnelle</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<title>Impact du réchauffement sur la volumétrie opérationnelle du SDMIS</title>
+<!--Appel du fichier de style (qui doit être dans le même dossier)-->
 <link rel="stylesheet" href="style.css">
 </head>
-
+<!--Paramètres généraux de la page et chargement des ressources-->
 <body>
+<!--Conteneur principal regroupant l'ensemble du dashboard-->
 <div class="app">
 
+<!--Présentation du dashboard-->
   <div class="app-header">
     <span class="eyebrow">SDMIS · Ville de Lyon · Modèle prédictif Random Forest</span>
     <h1>Impact de la hausse des températures sur la volumétrie opérationnelle</h1>
     <p class="subtitle">Prédiction du nombre d'interventions par créneau horaire, en fonction d'un scénario d'augmentation de température.</p>
   </div>
 
+<!--Navigation entre deux onglets-->
   <div class="tabs">
     <button class="tab-btn active" data-tab="tab1">Graphique journalier</button>
     <button class="tab-btn" data-tab="tab2">Chiffres clés</button>
   </div>
 
-  <!-- ===================== TAB 1 ===================== -->
+<!--Onglet 1 : L'analyse journalière-->
   <div class="tab-panel active" id="tab1">
-
+<!--Choix des jours sélectionnables et propositon de sélectiuon d'une hausse de température-->
     <div class="controls">
       <div class="control-group">
         <label class="control-label" for="date-picker">Sélectionner un jour</label>
@@ -48,7 +50,7 @@
         </div>
       </div>
     </div>
-
+<!--Graphique comparant l'historique du jour (moyenne 2019-2025) et la prédiction en fonction des choix de l'utilisateur-->
     <div class="card">
       <p class="card-title" id="chart1-title">Interventions par créneau : samedi 15 août 2026</p>
       <p class="card-sub">La moyenne historique correspond à la moyenne du nombre d'interventions observées
@@ -61,9 +63,9 @@ de température au modèle.</p>
     <div class="day-total-row" id="day-totals"></div>
   </div>
 
-  <!-- ===================== TAB 2 ===================== -->
+<!--Onglet 2 : Synthèse hebdomadaire, mensuelle, annuelle-->
   <div class="tab-panel" id="tab2">
-
+<!--Sélection d'une hausse de température-->
     <div class="controls">
       <div class="control-group slider-wrap">
         <div class="slider-readout">
@@ -79,10 +81,11 @@ de température au modèle.</p>
         </div>
       </div>
     </div>
-
+<!--Les blocs des indicateurs-->
     <div class="kpi-grid" id="kpi-grid"></div>
     <div class="info-box">
 
+<!--Les blocs explicatifs des indicateurs-->
 <strong>Lecture des indicateurs :</strong>
 
 <ul>
@@ -103,7 +106,7 @@ de température au modèle.</p>
 
   </div>
 
-
+<!--Le graphique de l'évolution mensuelle entre moyenne volumétrie historique et prédiction-->
     <div class="charts-row single-chart">
       <div class="card">
         <p class="card-title">Volumétrie mensuelle prédite</p>
@@ -116,7 +119,7 @@ de température au modèle.</p>
   </div>
 </div>
 
-
+<!--Note explicative du modèle utilisé-->
     <footer class="note">
 <strong>À propos du modèle :</strong><br>
 
@@ -134,9 +137,10 @@ pas des observations réelles.
   </div>
 
 </div>
-
+<!--Chargement des librairies nécessaires aux graphiques-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<!--Appel du Javascript gérant tout l'interactivité de la page-->
 <script src="main.js"></script>
 
-</body>
+</body><!--fermeture de la balise body-->
 </html>
