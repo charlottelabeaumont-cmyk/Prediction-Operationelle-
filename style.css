@@ -132,7 +132,7 @@
   /* ---------- KPI grid tab 2 ---------- */
   .kpi-grid{
     display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:14px;
-    margin-bottom:16px;
+    margin-bottom:24px;
   }
   .kpi-card{
     background:var(--surface); border:1px solid var(--border); border-radius:var(--radius);
@@ -165,6 +165,7 @@
   .info-text,
  .info-box{
   margin-top:14px;
+  margin-bottom: 14px;
   padding:12px 16px;
   background:var(--surface-2);
   border:1px solid var(--border);
