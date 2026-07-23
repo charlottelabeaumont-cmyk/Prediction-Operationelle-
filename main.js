@@ -150,7 +150,7 @@ delta1Slider.addEventListener('input', renderChart1);
 const delta2Slider = document.getElementById('delta2-slider');
 const delta2Value = document.getElementById('delta2-value');
 const kpiGrid = document.getElementById('kpi-grid');
-let chart2a, chart2b;
+let chart2a;
 
 function pctDelta(val, ref){ return ref>0 ? ((val-ref)/ref*100) : 0; }
 
@@ -188,8 +188,7 @@ function renderTab2(){
 
   const refMonthly = MOIS_COURT.map((_,i)=> ref.par_mois[String(i+1)]);
   const curMonthly = MOIS_COURT.map((_,i)=> cur.par_mois[String(i+1)]);
-  const refCreneau = CRENEAUX.map(c=> ref.par_creneau[c]);
-  const curCreneau = CRENEAUX.map(c=> cur.par_creneau[c]);
+
 
   if(chart2a){
     chart2a.data.datasets[1].data = curMonthly;
@@ -207,28 +206,6 @@ function renderTab2(){
         plugins:{ legend:{ labels:{ color:'#EAF1F6', font:{family:'Inter', size:11.5} } } },
         scales:{
           x:{ ticks:{ color:'#8DA3B8', font:{family:'Inter', size:10.5} }, grid:{ display:false } },
-          y:{ ticks:{ color:'#8DA3B8', font:{family:'IBM Plex Mono', size:10.5} }, grid:{ color:'#20303F' }, beginAtZero:true }
-        }
-      }
-    });
-  }
-
-  if(chart2b){
-    chart2b.data.datasets[1].data = curCreneau;
-    chart2b.data.datasets[1].backgroundColor = color;
-    chart2b.update();
-  } else {
-    chart2b = new Chart(document.getElementById('chart2b'), {
-      type:'bar',
-      data:{ labels: CRENEAUX, datasets:[
-        { label:'Référence', data: refCreneau, backgroundColor:'#3A4C5E', borderRadius:3, maxBarThickness:34 },
-        { label:'Scénario', data: curCreneau, backgroundColor: color, borderRadius:3, maxBarThickness:34 }
-      ]},
-      options:{
-        responsive:true, maintainAspectRatio:false,
-        plugins:{ legend:{ labels:{ color:'#EAF1F6', font:{family:'Inter', size:11.5} } } },
-        scales:{
-          x:{ ticks:{ color:'#8DA3B8', font:{family:'Inter', size:10 } }, grid:{ display:false } },
           y:{ ticks:{ color:'#8DA3B8', font:{family:'IBM Plex Mono', size:10.5} }, grid:{ color:'#20303F' }, beginAtZero:true }
         }
       }

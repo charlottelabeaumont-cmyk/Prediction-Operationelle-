@@ -79,18 +79,18 @@
 
     <div class="kpi-grid" id="kpi-grid"></div>
 
-    <div class="charts-row">
+    <div class="charts-row single-chart">
       <div class="card">
         <p class="card-title">Volumétrie mensuelle prédite</p>
-        <p class="card-sub">Référence (0°C) vs scénario sélectionné, sur l'année 2026</p>
-        <div class="chart-box short"><canvas id="chart2a"></canvas></div>
-      </div>
-      <div class="card">
-        <p class="card-title">Répartition par créneau</p>
-        <p class="card-sub">Cumul annuel, référence vs scénario sélectionné</p>
-        <div class="chart-box short"><canvas id="chart2b"></canvas></div>
-      </div>
+        <p class="card-sub">
+        Référence climatique vs scénario de hausse de température sélectionné
+      </p>
+      <div class="chart-box short">
+        <canvas id="chart2a"></canvas>
     </div>
+  </div>
+</div>
+
 
     <footer class="note">Modèle Random Forest entraîné sur température, saison, période de vacances scolaires, jour de la semaine et créneau horaire. Les chiffres sont des prédictions issues du modèle, pas des mesures observées.</footer>
   </div>
