@@ -147,7 +147,7 @@
   .kpi-delta{ font-family:'IBM Plex Mono',monospace; font-size:12.5px; margin-top:8px; }
   .kpi-delta .arrow{ margin-right:3px; }
 
-  .charts-row{ display:grid; grid-template-columns:1fr; gap:16px; }
+  .charts-row{ display:block; width:100%; margin-top:24px; }
   .charts-row .card{
   width:100%;
 }
