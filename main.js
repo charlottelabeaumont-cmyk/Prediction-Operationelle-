@@ -115,7 +115,7 @@ function renderChart1(){
         responsive:true, maintainAspectRatio:false,
         plugins:{
           legend:{ labels:{ color:'#EAF1F6', font:{family:'Inter', size:12} } },
-          tooltip:{ callbacks:{ label: ctx=> `${ctx.dataset.label}: ${ctx.parsed.y.toFixed(1)} interv.` } }
+          tooltip:{ callbacks:{ label: ctx=> `${ctx.dataset.label}: ${Math.round(ctx.parsed.y)} interv.` } }
         },
         scales:{
           x:{ ticks:{ color:'#8DA3B8', font:{family:'Inter', size:11.5} }, grid:{ display:false } },
