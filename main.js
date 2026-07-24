@@ -124,6 +124,8 @@ function renderChart1(){
       },
       options:{
         responsive:true, maintainAspectRatio:false,
+        layout: {
+          padding: { top:15 } },
         plugins:{
           legend:{ labels:{ color:'#EAF1F6', font:{family:'Arial', size:12}, padding:20} },
           tooltip:{ callbacks:{ label: ctx=> `${ctx.dataset.label}: ${Math.round(ctx.parsed.y)} interv.` } }
@@ -219,7 +221,10 @@ const curMonthly = MOIS_COURT.map((_,i)=>
       ]},
       options:{
         responsive:true, maintainAspectRatio:false,
-      plugins:{legend:{ labels:{ color:'#EAF1F6', font:{family:'Aria,', size:11.5}, padding:20 } },tooltip:{callbacks:{label: ctx => `${ctx.dataset.label}: ${Math.round(ctx.parsed.y)} interv.`
+        layout:{
+          padding: { top:15
+        }},
+      plugins:{legend:{ labels:{ color:'#EAF1F6', font:{family:'Arial', size:11.5}, padding:20 } },tooltip:{callbacks:{label: ctx => `${ctx.dataset.label}: ${Math.round(ctx.parsed.y)} interv.`
           }
         }
       },
@@ -243,7 +248,7 @@ init().catch(err => {
             color:white;
             background:#0B121A;
             padding:2rem;
-            font-family:Inter,sans-serif;
+            font-family:Arial,sans-serif;
         ">
             Impossible de charger les données (<code>data.json</code>).
         </div>
