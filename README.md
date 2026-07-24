@@ -52,7 +52,7 @@
 ## Documentation
 Ces graphiques sont accompagnés d'un rapport méthodologique détaillant la méthodologie employée pour la réalisation d'analyses bivariées entre variables prédictives et nombre d'interventions et la préparation du jeu de données "data.json".
 
-[Texte du lien](Méthodologie.pdf)
+[Méthodologie Analyses bivariées et modèle prédictif](Méthodologie.pdf)
 
 
 
