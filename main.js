@@ -50,6 +50,22 @@ function fmtDateLong(dateStr){
   return `${dayName} ${d} ${MOIS_FR[m-1]} ${y}`;
 }
 function mixChannel(a,b,t){ return Math.round(a + (b-a)*t); }
+
+/*Formatage de l'espacement des légendes*/
+const legendSpacing = {
+  id: 'legendSpacing',
+  beforeInit(chart) {
+    const fitValue = chart.legend.fit;
+
+    chart.legend.fit = function fit() {
+      fitValue.bind(chart.legend)();
+      this.height += 20; // espace supplémentaire sous la légende
+    };
+  }
+};
+
+Chart.register(legendSpacing);
+
 /*-------------------Gestion des couleurs----------------------------------------------------------------------------------------------------------------------------------*/
 /*Échelle de couleur représentant l'intensité du scénario climatique, plus on augmente plus c'est rouge*/
 function tempColor(delta){
@@ -124,16 +140,12 @@ function renderChart1(){
       },
       options:{
         responsive:true, maintainAspectRatio:false,
-        layout: {
-          padding: { 
-            top:10, bottom:10 
-          }},
         plugins:{
-          legend:{ labels:{ color:'#EAF1F6', font:{family:'Arial', size:12}, padding:20} },
+          legend:{ labels:{ color:'#EAF1F6', font:{family:'Arial', size:12} } },
           tooltip:{ callbacks:{ label: ctx=> `${ctx.dataset.label}: ${Math.round(ctx.parsed.y)} interv.` } }
         },
         scales:{
-          x:{ offset: true, ticks:{ color:'#8DA3B8', font:{family:'Arial', size:11.5}, padding:10 }, grid:{ display:false } },
+          x:{ ticks:{ color:'#8DA3B8', font:{family:'Arial', size:11.5}, padding:10 }, grid:{ display:false } },
           y:{ ticks:{ color:'#8DA3B8', font:{family:'Arial', size:11} }, grid:{ color:'#20303F' }, beginAtZero:true }
         }
       }
@@ -223,15 +235,12 @@ const curMonthly = MOIS_COURT.map((_,i)=>
       ]},
       options:{
         responsive:true, maintainAspectRatio:false,
-        layout:{
-          padding: { top:10, bottom:10
-        }},
-      plugins:{legend:{ labels:{ color:'#EAF1F6', font:{family:'Arial', size:11.5}, padding:20 } },tooltip:{callbacks:{label: ctx => `${ctx.dataset.label}: ${Math.round(ctx.parsed.y)} interv.`
+        plugins:{legend:{ labels:{ color:'#EAF1F6', font:{family:'Arial', size:11.5}, padding:20 } },tooltip:{callbacks:{label: ctx => `${ctx.dataset.label}: ${Math.round(ctx.parsed.y)} interv.`
           }
         }
       },
         scales:{
-          x:{ offset: true, ticks:{ color:'#8DA3B8', font:{family:'Arial', size:10.5}, padding:10 }, grid:{ display:false } },
+          x:{ ticks:{ color:'#8DA3B8', font:{family:'Arial', size:10.5} }, grid:{ display:false } },
           y:{ ticks:{ color:'#8DA3B8', font:{family:'Arial', size:10.5} }, grid:{ color:'#20303F' }, beginAtZero:true }
         }
       }
