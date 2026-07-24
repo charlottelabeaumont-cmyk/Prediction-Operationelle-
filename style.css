@@ -17,7 +17,7 @@
 /*Application d'un modèle de boîte uniforme pour faciliter la gestion des dimensions des divers éléments*/  
 *{box-sizing:border-box;}
 
-/*Style général de la page web : fond, police, couleurs principales*/
+/*Style général de la page web : fond, couleurs principales, reprend les éléments indiqués dans :root*/
 body{
     margin:0;
     background:var(--ink);
@@ -63,7 +63,7 @@ h1{
     line-height:1.5; 
     margin-top:2px;
 }
-/*Navigation entre les onglets, gestion des boutons et de l'onglet actif*/
+/*Gestion de la navigation entre les onglets, des boutons et de l'onglet actif*/
 .tabs{ 
     display:flex; 
     gap:4px; 
@@ -105,7 +105,7 @@ h1{
 /*Apparition douce lors du changement d'onglet */
 @keyframes fade{ from{opacity:0; transform:translateY(4px);} to{opacity:1; transform:translateY(0);} }
 
-/*Barre de contrôle de la température et du choix de la date*/
+/*Mise en forme de la barre de contrôle permettant de sélectionner la date et la variation de température */
 .controls{
     display:flex; 
     flex-wrap:wrap; 
@@ -175,6 +175,7 @@ input[type="date"]::-webkit-calendar-picker-indicator{ filter:invert(0.7); curso
     color:var(--text-muted);
 }
 
+/*Dégradé de couleurs pour la barre de hausse de température*/
 input[type="range"]{
     -webkit-appearance:none; 
     width:100%; 
@@ -184,7 +185,7 @@ input[type="range"]{
     outline:none; 
     cursor:pointer;
 }
-
+/*Personnalisation du curseur du slider selon la température sélectionnée*/
 input[type="range"]::-webkit-slider-thumb{
     -webkit-appearance:none; 
     width:18px; 
@@ -222,7 +223,7 @@ input[type="range"]::-moz-range-thumb{
     color:var(--mid);
 }
 
-/*Paramètres des conteneurs autour des graphiques (ce qui harmonise tous les conteneurs)*/
+/*Style des conteneurs des graphiques afin d'harmoniser leur apparence*/
 .card{
     background:var(--surface); 
     border:1px solid var(--border); 
@@ -258,7 +259,7 @@ input[type="range"]::-moz-range-thumb{
     width:100%;
 }
 
-/*Stylisation des indicateurs journaliers*/
+/*Stylisation des indicateurs journaliers (KPI)*/
 .day-total-row{
     display:flex; 
     gap:14px; 
@@ -357,12 +358,12 @@ footer.note{
     padding-top:14px;
 }
 
-/*Permet au graphique d'être responsive (réduction des animations si l'accessibilité au graphique est sur petit écran)*/
+/*Désactivation des animations lorsque l'utilisateur préfère réduire les mouvements (accessibilité)*/
 @media (prefers-reduced-motion: reduce){
     .tab-panel.active{ animation:none; }
 }
 
-/*Stylisation des notes facilitant la lecture des chiffres clés*/
+/*Mise en forme des encadrés d'information accompagnant les chiffres clés*/
 .info-text,
 .info-box{
     margin-top:14px;

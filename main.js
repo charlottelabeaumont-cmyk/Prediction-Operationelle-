@@ -1,12 +1,12 @@
-/*------------------------Code JAVASCRIPT mobilisé pour l'intercativité du dashboard------------------------------------------------------------*/
-/*Stockage des données fournies par le json*/
+/*------------------------Code JAVASCRIPT mobilisé pour l'interactivité du dashboard------------------------------------------------------------*/
+/*Stockage des données fournies par le JSON*/
 let APP;
 let CRENEAUX;
 let DELTAS;
 let DATA_JOUR;
 let DATA_GLOBALE;
 
-/*Chargement et extraction du json*/
+/*Chargement des données depuis le JSON et initialisation des variables globales*/
 async function init() {
     const response = await fetch("data.json");
 
@@ -25,7 +25,7 @@ async function init() {
     renderTab2();
 }
 /*-----------------------------------------------------------------------------------------------------------------------------------------------------*/
-/*Traduction des jours et mois inscrit en anglais en français pour l'affichage utilisateur*/
+/*Traduction en français des jours et mois écrits en anglais pour l'affichage utilisateur*/
 const JOURS_FR = {
   Monday:'lundi', Tuesday:'mardi', Wednesday:'mercredi', Thursday:'jeudi',
   Friday:'vendredi', Saturday:'samedi', Sunday:'dimanche'
@@ -37,7 +37,7 @@ const MOIS_COURT = ['Jan','Fév','Mar','Avr','Mai','Juin','Juil','Août','Sep','
 function fmtNum(n){
   return Math.round(n).toLocaleString('fr-FR');
 }
-/*Formatage des scénarios de température : 2 devient + 2°C*/
+/*Formatage des scénarios de température : "2" devient "+ 2,0°C"*/
 function fmtDelta(d){
   return (d>=0?'+':'') + d.toFixed(1).replace('.',',');
 }
@@ -51,7 +51,7 @@ function fmtDateLong(dateStr){
 }
 function mixChannel(a,b,t){ return Math.round(a + (b-a)*t); }
 
-/*Formatage de l'espacement des légendes*/
+/*Personnalisation de Chart.js afin d'ajouter un espace sous la légende*/
 const legendSpacing = {
   id: 'legendSpacing',
   beforeInit(chart) {
@@ -67,7 +67,7 @@ const legendSpacing = {
 Chart.register(legendSpacing);
 
 /*-------------------Gestion des couleurs----------------------------------------------------------------------------------------------------------------------------------*/
-/*Échelle de couleur représentant l'intensité du scénario climatique, plus on augmente plus c'est rouge*/
+/*Échelle de couleurs représentant l'intensité du scénario climatique, plus on augmente plus c'est rouge*/
 function tempColor(delta){
   const stops = [ [62,143,208], [240,166,59], [229,72,77] ]; 
   const mid = 1.5;
@@ -77,16 +77,16 @@ function tempColor(delta){
   const r=mixChannel(c1[0],c2[0],t), g=mixChannel(c1[1],c2[1],t), b=mixChannel(c1[2],c2[2],t);
   return `rgb(${r},${g},${b})`;
 }
-/*Application de la couleur sur le curseur de températures*/
+/*Application de la couleur sur le curseur de température*/
 function applyThumbColor(slider, delta){
   slider.style.setProperty('--thumb-color', tempColor(delta));
 }
 
-/* ---- closest available delta key (data has 0..10 step .5) ---- */
+/*Conversion de la température en clé de recherche pour correspondre au format du JSON (assure une bonne lecture)*/
 function deltaKey(delta){ return delta.toFixed(1); }
 
 /*-------------------Gestion des onglets----------------------------------------------------------------------------------------------------------------------------------*/
-/*Affiche les élements de l'onglet sélectionné et masque les élements de l'autre onglet*/
+/*Affiche les éléments de l'onglet sélectionné et masque les éléments de l'autre onglet*/
 document.querySelectorAll('.tab-btn').forEach(btn=>{
   btn.addEventListener('click', ()=>{
     document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
@@ -118,7 +118,7 @@ function renderChart1(){
   dayBadge.textContent = fmtDateLong(dateStr).replace(/^./,c=>c.toUpperCase());
   chart1Title.textContent = `Interventions par créneau : ${fmtDateLong(dateStr)}`;
 
-  /*récupération des valeurs historiques du jour sélectionné et des valeurs prédits*/
+  /*Récupération des valeurs historiques et prédites pour le jour sélectionné*/
   const histVals = day.hist_ref;
   const predVals = day.pred_par_delta[deltaKey(delta)];
   const color = tempColor(delta);
@@ -165,7 +165,7 @@ function renderChart1(){
       <div class="mini-stat-value" style="color:${color}">${fmtNum(predTotal)} <span style="font-size:12px;color:var(--text-muted)">interventions</span></div>
     </div>
     <div class="mini-stat">
-      <div class="mini-stat-label">Écart entre le nombre d'interventions prédit de la journée sélectionnée et la moyenne historique de cette journée</div>
+      <div class="mini-stat-label">Écart entre le nombre d'interventions prédites de la journée sélectionnée et la moyenne historique de cette journée</div>
       <div class="mini-stat-value" style="color:${color}">${pct>=0?'+':''}${pct.toFixed(1)}%</div>
     </div>
   `;
@@ -173,13 +173,14 @@ function renderChart1(){
 datePicker.addEventListener('input', renderChart1);
 delta1Slider.addEventListener('input', renderChart1);
 
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------*/
 /*CHIFFRES CLÉS*/
 const delta2Slider = document.getElementById('delta2-slider');
 const delta2Value = document.getElementById('delta2-value');
 const kpiGrid = document.getElementById('kpi-grid');
 let chart2a;
 
-/*Calcul l'évolution de la volumétrie par rapport à la volumétrie historique*/
+/*Calcul de l'écart relatif entre une valeur prédite et la valeur historique*/
 function pctDelta(val, ref){ return ref>0 ? ((val-ref)/ref*100) : 0; }
 
 function kpiCardHTML(label, val, ref, unitSuffix, color){
@@ -195,7 +196,7 @@ function kpiCardHTML(label, val, ref, unitSuffix, color){
     </div>
   `;
 }
-/*Génération du deuxième onglet en soit*/
+/*Génération du contenu du second onglet (chiffres clés et graphique mensuel)*/
 function renderTab2(){
   const delta = parseFloat(delta2Slider.value);
   delta2Value.textContent = fmtDelta(delta) + ' °C';
@@ -250,7 +251,7 @@ const curMonthly = MOIS_COURT.map((_,i)=>
 delta2Slider.addEventListener('input', renderTab2);
 
 /*-------------------Initialisation----------------------------------------------------------------------------------------------------------------------------------*/
-/*Lancement du dashboard, affichage d'un message d'erreur si défaut de chargement du json*/
+/*Lancement du dashboard, affichage d'un message d'erreur si défaut de chargement du JSON*/
 init().catch(err => {
     console.error(err);
 

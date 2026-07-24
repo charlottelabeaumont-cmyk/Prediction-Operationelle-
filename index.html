@@ -8,7 +8,7 @@
 <!--Appel du fichier de style (qui doit être dans le même dossier)-->
 <link rel="stylesheet" href="style.css">
 </head>
-<!--Paramètres généraux de la page et chargement des ressources-->
+<!--Paramètres généraux de la page-->
 <body>
 <!--Conteneur principal regroupant l'ensemble du dashboard-->
 <div class="app">
@@ -17,7 +17,7 @@
   <div class="app-header">
     <span class="eyebrow">SDMIS · Ville de Lyon · Modèle prédictif Random Forest</span>
     <h1>Impact de la hausse des températures sur la volumétrie opérationnelle</h1>
-    <p class="subtitle">Prédiction du nombre d'interventions par créneau horaire, en fonction d'un scénario d'augmentation de température.</p>
+    <p class="subtitle">Prédiction du nombre d'interventions du SDMIS en fonction d'un scénario d'augmentation de température.</p>
   </div>
 
 <!--Navigation entre deux onglets-->
@@ -28,7 +28,7 @@
 
 <!--Onglet 1 : L'analyse journalière-->
   <div class="tab-panel active" id="tab1">
-<!--Choix des jours sélectionnables et propositon de sélectiuon d'une hausse de température-->
+<!--Choix des jours sélectionnables et proposition de sélection d'une hausse de température-->
     <div class="controls">
       <div class="control-group">
         <label class="control-label" for="date-picker">Sélectionner un jour</label>
@@ -53,7 +53,7 @@
 <!--Graphique comparant l'historique du jour (moyenne 2019-2025) et la prédiction en fonction des choix de l'utilisateur-->
     <div class="card">
       <p class="card-title" id="chart1-title">Interventions par créneau : samedi 15 août 2026</p>
-      <p class="card-sub">La moyenne historique correspond à la moyenne du nombre d'interventions observées
+      <p class="card-sub">La moyenne historique correspond au nombre moyen d'interventions observé
 pour le même jour calendaire (même jour et même mois) sur la période 2019-2025,
 calculée par créneau horaire. La prédiction applique ensuite un scénario de hausse
 de température par rapport à la moyenne de température observée sur ces créneaux à ce jour les années précédentes.</p>
@@ -81,7 +81,7 @@ de température par rapport à la moyenne de température observée sur ces cré
         </div>
       </div>
     </div>
-<!--Les blocs des indicateurs-->
+<!--Affichage des indicateurs clés-->
     <div class="kpi-grid" id="kpi-grid"></div>
     <div class="info-box">
 
@@ -95,7 +95,7 @@ de température par rapport à la moyenne de température observée sur ces cré
   </li>
 
   <li>
-  Les scénarios <strong>0°C à +4°C</strong> représentent les volumes d'interventions
+  Les scénarios allant de <strong>0°C à +3°C</strong> représentent les volumes d'interventions
   estimés par le modèle selon différents niveaux d'augmentation de température moyenne.
   </li>
 
@@ -106,7 +106,7 @@ de température par rapport à la moyenne de température observée sur ces cré
 
   </div>
 
-<!--Le graphique de l'évolution mensuelle entre moyenne volumétrie historique et prédiction-->
+<!--Graphique comparant la volumétrie historique moyenne et la volumétrie prédite-->
     <div class="charts-row single-chart">
       <div class="card">
         <p class="card-title">Volumétrie mensuelle prédite</p>
@@ -141,10 +141,10 @@ s'écartent en moyenne de 4,84 interventions des observations réelles pour chaq
   </div>
 
 </div>
-<!--Chargement des librairies nécessaires aux graphiques-->
+<!--Chargement de la librairie Chart.js nécessaire aux graphiques-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <!--Appel du Javascript gérant tout l'interactivité de la page-->
 <script src="main.js"></script>
 
-</body><!--fermeture de la balise body-->
+</body><!--Fermeture de la balise body-->
 </html>
