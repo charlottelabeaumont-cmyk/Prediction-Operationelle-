@@ -22,10 +22,9 @@
 ---
 
 ## Fonctionnalités
-
-- Graphique divisé en deux onglets :
-  Un premier onglet permet aux utilisateurs de choisir un jour à prédire ainsi qu'une température, le résultat indique le nombre d'interventions prédit par créneau de 6 heures.
-  Un deuxième onglet propose de chosir une augmentation de température variant entre 0 et + 3°C et sa répercusssion sur la volumétrie opérationelle mensuelle/annuelle 
+- Analyse journalière : permet de sélectionner une date ainsi qu'un scénario d'augmentation de température. Le tableau de bord affiche alors le nombre d'interventions prédites du SDMIS par créneau de 6 heures, en comparaison avec la moyenne historique.
+  
+- Synthèse des chiffres clés : permet de simuler une augmentation de température comprise entre 0 °C et +3 °C. Le tableau de bord présente alors l'impact estimé sur la volumétrie opérationnelle mensuelle et annuelle, ainsi que les principaux indicateurs associés.
 
 ---
 
