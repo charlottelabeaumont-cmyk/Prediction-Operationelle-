@@ -56,7 +56,7 @@
       <p class="card-sub">La moyenne historique correspond à la moyenne du nombre d'interventions observées
 pour le même jour calendaire (même jour et même mois) sur la période 2019-2025,
 calculée par créneau horaire. La prédiction applique ensuite un scénario de hausse
-de température au modèle.</p>
+de température par rapport à la moyenne de température observée sur ces créneaux à ce jour les années précédentes.</p>
       <div class="chart-box"><canvas id="chart1"></canvas></div>
     </div>
 
@@ -133,6 +133,10 @@ température, saison, période de vacances scolaires, jour de la semaine et cré
 Les résultats affichés sont des estimations produites par le modèle et ne constituent
 pas des observations réelles.
 
+En termes de performance, après son entraînement sur des données historiques, 
+le modèle a été évalué sur un jeu de test constitué de données réelles. 
+Il obtient une erreur absolue moyenne (MAE) de 4,84, ce qui signifie que les prédictions 
+s'écartent en moyenne de 4,84 interventions des observations réelles pour chaque créneau horaire.
 </footer>
   </div>
 

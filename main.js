@@ -100,7 +100,7 @@ function renderChart1(){
   delta1Value.style.color = tempColor(delta);
   applyThumbColor(delta1Slider, delta);
   dayBadge.textContent = fmtDateLong(dateStr).replace(/^./,c=>c.toUpperCase());
-  chart1Title.textContent = `Interventions par créneau — ${fmtDateLong(dateStr)}`;
+  chart1Title.textContent = `Interventions par créneau : ${fmtDateLong(dateStr)}`;
 
   /*récupération des valeurs historiques du jour sélectionné et des valeurs prédits*/
   const histVals = day.hist_ref;
@@ -125,12 +125,12 @@ function renderChart1(){
       options:{
         responsive:true, maintainAspectRatio:false,
         plugins:{
-          legend:{ labels:{ color:'#EAF1F6', font:{family:'Inter', size:12} } },
+          legend:{ labels:{ color:'#EAF1F6', font:{family:'Arial', size:12}, padding:20} },
           tooltip:{ callbacks:{ label: ctx=> `${ctx.dataset.label}: ${Math.round(ctx.parsed.y)} interv.` } }
         },
         scales:{
-          x:{ ticks:{ color:'#8DA3B8', font:{family:'Inter', size:11.5} }, grid:{ display:false } },
-          y:{ ticks:{ color:'#8DA3B8', font:{family:'IBM Plex Mono', size:11} }, grid:{ color:'#20303F' }, beginAtZero:true }
+          x:{ ticks:{ color:'#8DA3B8', font:{family:'Arial', size:11.5} }, grid:{ display:false } },
+          y:{ ticks:{ color:'#8DA3B8', font:{family:'Arial', size:11} }, grid:{ color:'#20303F' }, beginAtZero:true }
         }
       }
     });
@@ -219,13 +219,13 @@ const curMonthly = MOIS_COURT.map((_,i)=>
       ]},
       options:{
         responsive:true, maintainAspectRatio:false,
-      plugins:{legend:{ labels:{ color:'#EAF1F6', font:{family:'Inter', size:11.5} } },tooltip:{callbacks:{label: ctx => `${ctx.dataset.label}: ${Math.round(ctx.parsed.y)} interv.`
+      plugins:{legend:{ labels:{ color:'#EAF1F6', font:{family:'Aria,', size:11.5}, padding:20 } },tooltip:{callbacks:{label: ctx => `${ctx.dataset.label}: ${Math.round(ctx.parsed.y)} interv.`
           }
         }
       },
         scales:{
-          x:{ ticks:{ color:'#8DA3B8', font:{family:'Inter', size:10.5} }, grid:{ display:false } },
-          y:{ ticks:{ color:'#8DA3B8', font:{family:'IBM Plex Mono', size:10.5} }, grid:{ color:'#20303F' }, beginAtZero:true }
+          x:{ ticks:{ color:'#8DA3B8', font:{family:'Arial', size:10.5} }, grid:{ display:false } },
+          y:{ ticks:{ color:'#8DA3B8', font:{family:'Arial', size:10.5} }, grid:{ color:'#20303F' }, beginAtZero:true }
         }
       }
     });
