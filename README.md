@@ -27,7 +27,7 @@
 - Synthèse des chiffres clés : permet de simuler une augmentation de température comprise entre 0 °C et +3 °C. Le tableau de bord présente alors l'impact estimé sur la volumétrie opérationnelle mensuelle et annuelle, ainsi que les principaux indicateurs associés.
 
 
-#### Le graphique intercatif est disponible à cette adresse : https://charlottelabeaumont-cmyk.github.io/Prediction-Operationelle-/
+#### Le graphique intercatif est disponible à cette adresse : https://charlottelabeaumont-cmyk.github.io/Prediction-Operationnelle-/
 ---
 
 ## Technologies utilisées
