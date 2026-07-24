@@ -50,9 +50,9 @@
 ---
 
 ## Documentation
-Ces graphiques sont accompagnés d'un rapport méthodologique détaillant la méthodologie employée quant à leur réalisation.
+Ces graphiques sont accompagnés d'un rapport méthodologique détaillant la méthodologie employée pour la réalisation d'analyses bivariées entre variables prédictives et nombre d'interventions et la préparation du jeu de données "data.json".
 
-📄 [Analyses bivariées et prédiction opérationnelle.pdf](Analyses bivariées et prédiction opérationnelle.pdf)
+[Texte du lien](URL_du_PDF)
 
 
 
