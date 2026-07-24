@@ -52,7 +52,8 @@
 ## Documentation
 Ces graphiques sont accompagnés d'un rapport méthodologique détaillant la méthodologie employée quant à leur réalisation.
 
-📄 (lien vers méthodologie)
+📄 [Rapport_Méthodologie_Prédictif.pdf](./)
+
 
 ---
 
