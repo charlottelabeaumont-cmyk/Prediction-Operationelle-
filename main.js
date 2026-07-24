@@ -131,7 +131,7 @@ function renderChart1(){
           tooltip:{ callbacks:{ label: ctx=> `${ctx.dataset.label}: ${Math.round(ctx.parsed.y)} interv.` } }
         },
         scales:{
-          x:{ ticks:{ color:'#8DA3B8', font:{family:'Arial', size:11.5} }, grid:{ display:false } },
+          x:{ offset: true, ticks:{ color:'#8DA3B8', font:{family:'Arial', size:11.5}, padding:10 }, grid:{ display:false } },
           y:{ ticks:{ color:'#8DA3B8', font:{family:'Arial', size:11} }, grid:{ color:'#20303F' }, beginAtZero:true }
         }
       }
@@ -229,7 +229,7 @@ const curMonthly = MOIS_COURT.map((_,i)=>
         }
       },
         scales:{
-          x:{ ticks:{ color:'#8DA3B8', font:{family:'Arial', size:10.5} }, grid:{ display:false } },
+          x:{ offset: true, ticks:{ color:'#8DA3B8', font:{family:'Arial', size:10.5}, padding:10 }, grid:{ display:false } },
           y:{ ticks:{ color:'#8DA3B8', font:{family:'Arial', size:10.5} }, grid:{ color:'#20303F' }, beginAtZero:true }
         }
       }
