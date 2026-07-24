@@ -65,6 +65,9 @@ Ces graphiques sont accompagnés d'un rapport méthodologique détaillant la mé
 |---|---|
 | Charlotte **JOUVE** | [![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github)](https://github.com/charlottelabeaumont-cmyk) |
 
-**Provenance de la commande** : Stage réalisé au GACR (SDPOS) entre le 01/04/2026 et le 01/09/2026 dans le cadre d'une collaboration entre le SDMIS et le projet de recherche TRACES. Stage de fin de Master 2 Géographies Numériques 
+**Contexte de réalisation :**
+Stage réalisé au Service Départemental-Métropolitain d'Incendie et de Secours, Groupement Analyse et Couverture des Risques (Sous-Direction de la Prévention et de l'Organisation des Secours) entre le 01/04/2026 et le 01/09/2026. 
+Il s'inscrit dans le cadre d'une collaboration entre le SDMIS et le projet de recherche TRACES, piloté en partie par des chercheurs et des chercheuses de l'École Nationale Supérieure d'Architecture de Lyon (ENSAL). 
+Stage prenant place en fin de parcours du Master 2 Géographiques Numériques (Géonum) porté par l'Université Lyon 2 et l'Université Jean Monnet (Saint-Étienne).
 
 ---
