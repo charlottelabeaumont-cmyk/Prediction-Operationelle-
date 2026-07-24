@@ -2,41 +2,42 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Impact du réchauffement sur la volumétrie opérationnelle du SDMIS</title>
-<!--Appel du fichier de style (qui doit être dans le même dossier)-->
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impact du réchauffement sur la volumétrie opérationnelle du SDMIS</title>
+  <!--Appel du fichier de style (qui doit être dans le même dossier)-->
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <!--Paramètres généraux de la page-->
 <body>
-<!--Conteneur principal regroupant l'ensemble du dashboard-->
-<div class="app">
+  <!--Conteneur principal regroupant l'ensemble du dashboard-->
+  <div class="app">
 
-<!--Présentation du dashboard-->
-  <div class="app-header">
-    <span class="eyebrow">SDMIS · Ville de Lyon · Modèle prédictif Random Forest</span>
-    <h1>Impact de la hausse des températures sur la volumétrie opérationnelle</h1>
-    <p class="subtitle">Prédiction du nombre d'interventions du SDMIS en fonction d'un scénario d'augmentation de température.</p>
-  </div>
+    <!--Présentation du dashboard-->
+    <div class="app-header">
+      <span class="eyebrow">SDMIS · Ville de Lyon · Modèle prédictif Random Forest</span>
+      <h1>Impact de la hausse des températures sur la volumétrie opérationnelle</h1>
+      <p class="subtitle">Prédiction du nombre d'interventions du SDMIS en fonction d'un scénario d'augmentation de température.</p>
+    </div>
 
-<!--Navigation entre deux onglets-->
-  <div class="tabs">
-    <button class="tab-btn active" data-tab="tab1">Graphique journalier</button>
-    <button class="tab-btn" data-tab="tab2">Chiffres clés</button>
-  </div>
+    <!--Navigation entre deux onglets-->
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="tab1">Graphique journalier</button>
+      <button class="tab-btn" data-tab="tab2">Chiffres clés</button>
+    </div>
 
-<!--Onglet 1 : L'analyse journalière-->
-  <div class="tab-panel active" id="tab1">
-<!--Choix des jours sélectionnables et proposition de sélection d'une hausse de température-->
-    <div class="controls">
-      <div class="control-group">
-        <label class="control-label" for="date-picker">Sélectionner un jour</label>
-        <input type="date" id="date-picker" min="2026-01-01" max="2026-12-31" value="2026-08-15">
-        <span class="day-badge" id="day-badge">samedi 15 août 2026</span>
-      </div>
+    <!--Onglet 1 : L'analyse journalière-->
+    <div class="tab-panel active" id="tab1">
+      <!--Choix des jours sélectionnables et proposition de sélection d'une hausse de température-->
+      <div class="controls">
+        <div class="control-group">
+          <label class="control-label" for="date-picker">Sélectionner un jour</label>
+          <input type="date" id="date-picker" min="2026-01-01" max="2026-12-31" value="2026-08-15">
+          <span class="day-badge" id="day-badge">samedi 15 août 2026</span>
+        </div>
 
-      <div class="control-group slider-wrap">
+        <div class="control-group slider-wrap">
         <div class="slider-readout">
           <span class="control-label">Sélectionner une augmentation de température</span>
           <span class="delta-value" id="delta1-value">+2,0 °C</span>
@@ -50,22 +51,22 @@
         </div>
       </div>
     </div>
-<!--Graphique comparant l'historique du jour (moyenne 2019-2025) et la prédiction en fonction des choix de l'utilisateur-->
+    <!--Graphique comparant l'historique du jour (moyenne 2019-2025) et la prédiction en fonction des choix de l'utilisateur-->
     <div class="card">
       <p class="card-title" id="chart1-title">Interventions par créneau : samedi 15 août 2026</p>
       <p class="card-sub">La moyenne historique correspond au nombre moyen d'interventions observé
-pour le même jour calendaire (même jour et même mois) sur la période 2019-2025,
-calculée par créneau horaire. La prédiction applique ensuite un scénario de hausse
-de température par rapport à la moyenne de température observée sur ces créneaux à ce jour les années précédentes.</p>
+        pour le même jour calendaire (même jour et même mois) sur la période 2019-2025,
+        calculée par créneau horaire. La prédiction applique ensuite un scénario de hausse
+        de température par rapport à la moyenne de température observée sur ces créneaux à ce jour les années précédentes.</p>
       <div class="chart-box"><canvas id="chart1"></canvas></div>
     </div>
 
     <div class="day-total-row" id="day-totals"></div>
   </div>
 
-<!--Onglet 2 : Synthèse hebdomadaire, mensuelle, annuelle-->
+  <!--Onglet 2 : Synthèse hebdomadaire, mensuelle, annuelle-->
   <div class="tab-panel" id="tab2">
-<!--Sélection d'une hausse de température-->
+    <!--Sélection d'une hausse de température-->
     <div class="controls">
       <div class="control-group slider-wrap">
         <div class="slider-readout">
@@ -81,70 +82,69 @@ de température par rapport à la moyenne de température observée sur ces cré
         </div>
       </div>
     </div>
-<!--Affichage des indicateurs clés-->
-    <div class="kpi-grid" id="kpi-grid"></div>
+  <!--Affichage des indicateurs clés-->
+  <div class="kpi-grid" id="kpi-grid"></div>
     <div class="info-box">
 
-<!--Les blocs explicatifs des indicateurs-->
-<strong>Lecture des indicateurs :</strong>
+    <!--Les blocs explicatifs des indicateurs-->
+    <strong>Lecture des indicateurs :</strong>
 
-<ul>
-  <li>
-  La <strong>volumétrie historique</strong> correspond à la moyenne observée
-  sur les années précédentes (2019-2025) et constitue la référence de comparaison.
-  </li>
+    <ul>
+      <li>
+        La <strong>volumétrie historique</strong> correspond à la moyenne observée
+        sur les années précédentes (2019-2025) et constitue la référence de comparaison.
+      </li>
 
-  <li>
-  Les scénarios allant de <strong>0°C à +3°C</strong> représentent les volumes d'interventions
-  estimés par le modèle selon différents niveaux d'augmentation de température moyenne.
-  </li>
+      <li>
+        Les scénarios allant de <strong>0°C à +3°C</strong> représentent les volumes d'interventions
+        estimés par le modèle selon différents niveaux d'augmentation de température moyenne.
+      </li>
 
-  <li>
-  Les écarts en pourcentage sont calculés par rapport à la volumétrie historique.
-  </li>
-</ul>
-
+      <li>
+        Les écarts en pourcentage sont calculés par rapport à la volumétrie historique.
+      </li>
+    </ul>
   </div>
 
-<!--Graphique comparant la volumétrie historique moyenne et la volumétrie prédite-->
+    <!--Graphique comparant la volumétrie historique moyenne et la volumétrie prédite-->
     <div class="charts-row single-chart">
       <div class="card">
         <p class="card-title">Volumétrie mensuelle prédite</p>
         <p class="card-sub">
         Volumétrie historique vs volumétrie selon la température choisie
-      </p>
-      <div class="chart-box short">
-        <canvas id="chart2a"></canvas>
+        </p>
+        <div class="chart-box short">
+          <canvas id="chart2a"></canvas>
+      </div> 
+
     </div>
   </div>
-</div>
 
-<!--Note explicative du modèle utilisé-->
+    <!--Note explicative du modèle utilisé-->
     <footer class="note">
-<strong>À propos du modèle :</strong><br>
+      <strong>À propos du modèle :</strong><br>
 
-Le modèle de Machine Learning utilisé est une Random Forest, un algorithme
-qui combine plusieurs arbres de décision afin d'identifier les relations entre
-diverses variables et le volume d'interventions.
+      Le modèle de Machine Learning utilisé est une Random Forest, un algorithme
+      qui combine plusieurs arbres de décision afin d'identifier les relations entre
+      diverses variables et le volume d'interventions.
 
-Les prédictions prennent en compte plusieurs variables :
-température, saison, période de vacances scolaires, jour de la semaine et créneau horaire.
+      Les prédictions prennent en compte plusieurs variables :
+      température, saison, période de vacances scolaires, jour de la semaine et créneau horaire.
 
-Les résultats affichés sont des estimations produites par le modèle et ne constituent
-pas des observations réelles.
+      Les résultats affichés sont des estimations produites par le modèle et ne constituent
+      pas des observations réelles.
 
-En termes de performance, après son entraînement sur des données historiques, 
-le modèle a été évalué sur un jeu de test constitué de données réelles. 
-Il obtient une erreur absolue moyenne (MAE) de 4,84, ce qui signifie que les prédictions 
-s'écartent en moyenne de 4,84 interventions des observations réelles pour chaque créneau horaire.
-</footer>
+      En termes de performance, après son entraînement sur des données historiques, 
+      le modèle a été évalué sur un jeu de test constitué de données réelles. 
+      Il obtient une erreur absolue moyenne (MAE) de 4,84, ce qui signifie que les prédictions 
+      s'écartent en moyenne de 4,84 interventions des observations réelles pour chaque créneau horaire.
+    </footer>
   </div>
-
 </div>
-<!--Chargement de la librairie Chart.js nécessaire aux graphiques-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
-<!--Appel du Javascript gérant tout l'interactivité de la page-->
-<script src="main.js"></script>
 
+  <!--Chargement de la librairie Chart.js nécessaire aux graphiques-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <!--Appel du Javascript gérant tout l'interactivité de la page-->
+  <script src="main.js"></script>
 </body><!--Fermeture de la balise body-->
 </html>

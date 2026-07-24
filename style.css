@@ -1,4 +1,6 @@
 /*------------------------Code CSS mobilisé pour la stylisation du dashboard------------------------------------------------------------*/
+/*-----------------Design global-------------------------------------------------------------------------------------------------------*/
+
 /*DESIGN GLOBAL (Couleurs, dimensions, arrondis, police Arial définie ici sera alors utilisée partout)*/
 :root{
     --font-main: Arial, sans-serif;
@@ -32,6 +34,7 @@ body{
     padding:28px 24px 60px; 
 }
 
+/*-----------------En-tête et navigation-------------------------------------------------------------------------------------------------------*/
 /*En-tête du dashboard, espacements, titre, taille police*/
 .app-header{
     display:flex; 
@@ -95,7 +98,10 @@ h1{
     background:linear-gradient(90deg,var(--cool),var(--mid),var(--hot)); 
     border-radius:2px;
 }
-.tab-panel{ display:none; }
+
+.tab-panel{ 
+  display:none;
+}
 
 .tab-panel.active{ 
     display:block; 
@@ -105,6 +111,7 @@ h1{
 /*Apparition douce lors du changement d'onglet */
 @keyframes fade{ from{opacity:0; transform:translateY(4px);} to{opacity:1; transform:translateY(0);} }
 
+/*-----------------Contrôles utilisateur------------------------------------------------------------------------------------------------------------------------*/
 /*Mise en forme de la barre de contrôle permettant de sélectionner la date et la variation de température */
 .controls{
     display:flex; 
@@ -223,6 +230,7 @@ input[type="range"]::-moz-range-thumb{
     color:var(--mid);
 }
 
+/*-----------------Graphiques------------------------------------------------------------------------------------------------------------------------*/
 /*Style des conteneurs des graphiques afin d'harmoniser leur apparence*/
 .card{
     background:var(--surface); 
@@ -259,6 +267,7 @@ input[type="range"]::-moz-range-thumb{
     width:100%;
 }
 
+/*-----------------Indicateurs------------------------------------------------------------------------------------------------------------------------*/
 /*Stylisation des indicateurs journaliers (KPI)*/
 .day-total-row{
     display:flex; 
@@ -337,7 +346,9 @@ input[type="range"]::-moz-range-thumb{
     margin-top:8px;
 }
 
-.kpi-delta .arrow{ margin-right:3px; }
+.kpi-delta .arrow{ 
+  margin-right:3px;
+}
 
 /*Placement du graphique de la prédiction mensuelle*/
 .charts-row{
@@ -346,8 +357,10 @@ input[type="range"]::-moz-range-thumb{
     gap:16px;
 }
 
-.charts-row .card{ width:100%; }
-
+.charts-row .card{ 
+  width:100%; 
+}
+/*-----------------Pied de page------------------------------------------------------------------------------------------------------------------------*/
 /*Stylisation du pied de page et de la note explicative sur le modèle*/
 footer.note{
     margin-top:24px; 

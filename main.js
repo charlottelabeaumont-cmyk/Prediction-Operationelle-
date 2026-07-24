@@ -96,6 +96,7 @@ document.querySelectorAll('.tab-btn').forEach(btn=>{
   });
 });
 
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------*/
 /*GRAPHIQUE JOURNALIER*/
 const datePicker = document.getElementById('date-picker');
 const delta1Slider = document.getElementById('delta1-slider');
