@@ -22,9 +22,9 @@
 ---
 
 ## Fonctionnalités
-- Analyse journalière : permet de sélectionner une date ainsi qu'un scénario d'augmentation de température. Le tableau de bord affiche alors le nombre d'interventions prédites du SDMIS par créneau de 6 heures, en comparaison avec la moyenne historique.
+- Analyse journalière : permet de sélectionner une date ainsi qu'un scénario d'augmentation de température. Le tableau de bord affiche alors le nombre d'interventions prédites du SDMIS par créneau de 6 heures, en comparaison la prédiction avec la moyenne historique.
   
-- Synthèse des chiffres clés : permet de simuler une augmentation de température comprise entre 0 °C et +3 °C. Le tableau de bord présente alors l'impact estimé sur la volumétrie opérationnelle mensuelle et annuelle, ainsi que les principaux indicateurs associés.
+- Synthèse des chiffres clés : permet de simuler la répercussion de plusieurs scénarios d'augmentation de la température (allant de + 0 °C à +3 °C) sur l'activité opérationnelle du SDMIS au sein de la Ville de Lyon. Le tableau de bord présente alors l'impact estimé sur la volumétrie opérationnelle mensuelle et annuelle, ainsi que les principaux indicateurs associés.
 
 
 #### Le graphique intercatif est disponible à cette adresse : https://charlottelabeaumont-cmyk.github.io/Prediction-Operationnelle-/
