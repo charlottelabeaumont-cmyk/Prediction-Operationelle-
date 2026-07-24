@@ -46,7 +46,7 @@
 │   ├── index.html /        # Structuration et organisation des différents élements apparaissant sur les graphiques 
 │   ├── style.css /         # Stylisation des graphiques
 │   └── main.js             # Intercativité des graphiques 
-└── Rapport_Méthodologique.pdf  # Explication de la méthodologie complète
+└── Méthodologie.pdf  # Explication de la méthodologie complète
 ```
 
 ---
