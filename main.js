@@ -125,7 +125,9 @@ function renderChart1(){
       options:{
         responsive:true, maintainAspectRatio:false,
         layout: {
-          padding: { top:15 } },
+          padding: { 
+            top:10, bottom:10 
+          }},
         plugins:{
           legend:{ labels:{ color:'#EAF1F6', font:{family:'Arial', size:12}, padding:20} },
           tooltip:{ callbacks:{ label: ctx=> `${ctx.dataset.label}: ${Math.round(ctx.parsed.y)} interv.` } }
@@ -222,7 +224,7 @@ const curMonthly = MOIS_COURT.map((_,i)=>
       options:{
         responsive:true, maintainAspectRatio:false,
         layout:{
-          padding: { top:15
+          padding: { top:10, bottom:10
         }},
       plugins:{legend:{ labels:{ color:'#EAF1F6', font:{family:'Arial', size:11.5}, padding:20 } },tooltip:{callbacks:{label: ctx => `${ctx.dataset.label}: ${Math.round(ctx.parsed.y)} interv.`
           }
