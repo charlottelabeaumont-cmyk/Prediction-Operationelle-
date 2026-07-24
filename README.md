@@ -52,7 +52,8 @@
 ## Documentation
 Ces graphiques sont accompagnés d'un rapport méthodologique détaillant la méthodologie employée quant à leur réalisation.
 
-📄 [Rapport_Méthodologie_Prédictif.pdf](./)
+📄 [Rapport_Méthodologie_Prédictif.pdf](./Analyses bivariées et prédiction opérationnelle.pdf)
+
 
 
 ---
