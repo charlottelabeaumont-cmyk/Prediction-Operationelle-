@@ -45,11 +45,10 @@
 
 ## Structure du projet
 ```
-├── Dashboard/
-│   ├── data.json/          # Données
-│   ├── index.html /        # Structuration et organisation des différents éléments apparaissant sur les graphiques 
-│   ├── style.css /         # Stylisation des graphiques
-│   └── main.js             # Interactivité des graphiques 
+│── data.json/          # Données
+│── index.html /        # Structuration et organisation des différents éléments apparaissant sur les graphiques 
+│── style.css /         # Stylisation des graphiques
+│── main.js             # Interactivité des graphiques 
 └── Méthodologie.pdf  # Explication de la méthodologie complète
 ```
 
