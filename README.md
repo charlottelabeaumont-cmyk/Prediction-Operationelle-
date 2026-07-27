@@ -22,12 +22,12 @@
 ---
 
 ## Fonctionnalités
-- Analyse journalière : permet de sélectionner une date ainsi qu'un scénario d'augmentation de température. Le tableau de bord affiche alors le nombre d'interventions prédites du SDMIS par créneau de 6 heures, en comparaison la prédiction avec la moyenne historique.
+- Analyse journalière : permet de sélectionner une date ainsi qu'un scénario d'augmentation de température. Le tableau de bord affiche alors le nombre d'interventions prédites du SDMIS par créneau de 6 heures, en comparant la prédiction avec la moyenne historique.
   
 - Synthèse des chiffres clés : permet de simuler la répercussion de plusieurs scénarios d'augmentation de la température (allant de + 0 °C à +3 °C) sur l'activité opérationnelle du SDMIS au sein de la Ville de Lyon. Le tableau de bord présente alors l'impact estimé sur la volumétrie opérationnelle mensuelle et annuelle, ainsi que les principaux indicateurs associés.
 
 
-#### Le graphique intercatif est disponible à cette adresse : https://charlottelabeaumont-cmyk.github.io/Prediction-Operationnelle-/
+#### Le graphique interactif est disponible à cette adresse : https://charlottelabeaumont-cmyk.github.io/Prediction-Operationnelle-/
 ---
 
 ## Technologies utilisées
@@ -43,16 +43,16 @@
 ```
 ├── Dashboard/
 │   ├── data.json/          # Données
-│   ├── index.html /        # Structuration et organisation des différents élements apparaissant sur les graphiques 
+│   ├── index.html /        # Structuration et organisation des différents éléments apparaissant sur les graphiques 
 │   ├── style.css /         # Stylisation des graphiques
-│   └── main.js             # Intercativité des graphiques 
+│   └── main.js             # Interactivité des graphiques 
 └── Méthodologie.pdf  # Explication de la méthodologie complète
 ```
 
 ---
 
 ## Documentation
-Ces graphiques sont accompagnés d'un rapport méthodologique détaillant la méthodologie employée pour la réalisation d'analyses bivariées entre variables prédictives et nombre d'interventions et la préparation du jeu de données "data.json".
+Ces graphiques sont accompagnés d'un rapport méthodologique détaillant la méthodologie employée pour la réalisation d'analyses bivariées entre variables prédictives et nombre d'interventions ainsi que la préparation du jeu de données "data.json".
 
 [Méthodologie Analyses bivariées et modèle prédictif](Méthodologie.pdf)
 
