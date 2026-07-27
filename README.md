@@ -17,6 +17,10 @@
 ![Plotly](https://img.shields.io/badge/Plotly-3F4F75?logo=plotly&logoColor=white)
 ![Matplotlib](https://img.shields.io/badge/Matplotlib-11557C)
 ![SciPy](https://img.shields.io/badge/SciPy-8CAAE6?logo=scipy&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?logo=scikitlearn&logoColor=white)
+![Pathlib](https://img.shields.io/badge/Pathlib-3776AB?logo=python&logoColor=white)
+![JSON](https://img.shields.io/badge/JSON-000000?logo=json&logoColor=white)
+![vacances_scolaires_france](https://img.shields.io/badge/vacances__scolaires__france-0055A4?logo=python&logoColor=white)
 
 
 ---
